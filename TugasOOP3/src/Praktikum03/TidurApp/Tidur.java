@@ -1,4 +1,4 @@
-package Praktikum03;
+package Praktikum03.TidurApp;
 
 public class Tidur {
     int durasi;
