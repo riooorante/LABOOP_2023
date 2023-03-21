@@ -32,18 +32,18 @@ public class Store {
         }
         System.out.println("0. Keluar");
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProduct(ArrayList<Product> product) {
+        this.product = product;
+    }
+
     public void addProduct(Product product){
         this.product.add(product);
-//        Scanner sr = new Scanner(System.in);
-//        System.out.print("Nama : ");
-//        sr.nextLine();
-//        String nama = sr.nextLine();
-//        System.out.print("Harga : ");
-//        int harga = sr.nextInt();
-//        System.out.print("Strok : ");
-//        int stok = sr.nextInt();
-//        this.getProduct().add(new Product(nama, harga,stok));
-//        sr.close();
+//
     }
 
 }
