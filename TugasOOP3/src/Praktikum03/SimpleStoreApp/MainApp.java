@@ -2,7 +2,6 @@ package Praktikum03.SimpleStoreApp;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 public class MainApp {
 
@@ -16,16 +15,28 @@ public class MainApp {
 
 
         while (true){
+            System.out.print("Nama User > ");
+            user.setName(sr.nextLine());
+            System.out.print("Balance > ");
+            user.setBalance(sr.nextInt());
+
+            sr.nextLine();
             System.out.print("Nama Toko > ");
             store.setName(sr.nextLine());
             while (true){
-                System.out.println("Tambahkan Produk");
-                System.out.print("Nama/Harga/Stok > ");
-                String[] data = sr.nextLine().split("/");
-                store.addProduct(new Product(data[0],(data[1].substring(data.length) == "k")? data[1] : Integer.parseInt(data[1]), Integer.parseInt(data[2])));
-                System.out.print("Apakah anda akan menambah produk lagi (Ketik Y jika iya) >");
-                String konfir = sr.next();
-                if (konfir.isBlank()) {
+
+                System.out.println("-------Tambahkan Produk--------");
+                System.out.print("Nama Produk > ");
+                String nama = sr.nextLine();
+                System.out.print("Jumlah > ");
+                int harga = sr.nextInt();
+                System.out.print("Stok > ");
+                int stok = sr.nextInt();
+                store.addProduct(new Product(nama, harga, stok));
+                sr.nextLine();
+
+                String konfirmasi_2 = sr.nextLine();
+                if (konfirmasi_2.trim().isEmpty()) {
                     break;
                 }
             }
@@ -51,7 +62,7 @@ public class MainApp {
 
                         sign.repeat();
                         store.getProduct().get(pilihan1 - 1).produkLaku(store);
-                        user.setBalance(store.getProduct().get(pilihan1 - 1).getPrice());
+                        user.decreaseBalance(store.getProduct().get(pilihan1 - 1).getPrice());
 
                         sign.resi(pilihan1-1);
                         int pilihan2 = sr.nextInt();
