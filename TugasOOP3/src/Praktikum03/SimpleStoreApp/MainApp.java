@@ -15,6 +15,7 @@ public class MainApp {
 
 
         while (true){
+            System.out.println("----------Selamat Datang-----------");
             System.out.print("Nama User > ");
             user.setName(sr.nextLine());
             System.out.print("Balance > ");
@@ -35,6 +36,7 @@ public class MainApp {
                 store.addProduct(new Product(nama, harga, stok));
                 sr.nextLine();
 
+                System.out.print("Lanjutkan Proses? (Y/ ) >");
                 String konfirmasi_2 = sr.nextLine();
                 if (konfirmasi_2.trim().isEmpty()) {
                     break;
