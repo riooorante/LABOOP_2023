@@ -24,7 +24,6 @@ public class Main {
         System.out.println("1. Login");
         System.out.println("2. Register");
         System.out.print("> ");
-
         // Menginput pilihan menu
         int selectMenu = sc.nextInt();
         sc.nextLine();
@@ -97,26 +96,34 @@ public class Main {
     private static void showRegisterMenu() {
         System.out.println("-------------------------");
         System.out.println("REGISTER");
-
         // Menginput username dan password
-        System.out.println("Username");
-        System.out.print("> ");
-        String username = sc.nextLine();
-        System.out.println("Password");
-        System.out.print("> ");
-        String password = sc.nextLine();
-        /*
-         * TODO
-         * Buatlah atau Instance objek User baru, dan tambahkan
-         * username dan password yang diinput sebelumnya secara langsung
-         * saat instance User
-         */
-        User user = new User(username, password);
 
-        /*
-         * TODO
-         * Buatlah atau Instance objek Profile baru
-         */
+        String username,password;
+        while (true) {
+                System.out.println("Username");
+                System.out.print("> ");
+                username = sc.nextLine();
+                System.out.println("Password");
+                System.out.print("> ");
+                password = sc.nextLine();
+            if (!password.isBlank() && !username.isBlank()){
+                    for (User user : listUser) {
+                        if (password.length() >= 8 && !user.getUsername().equals(username)) {
+                            System.out.println("MMM");
+                            break;
+                        }
+
+                    }
+                System.out.printf("Password Harus Lebih Dari 8 Karakter!%n");
+                } else {
+                System.out.printf("Username atau password tidak boleh kosong%n");
+            }
+
+        }
+
+        User user = new User(username,password);
+
+
         Profile profile = new Profile();
 
         // Menginput Data Profile
