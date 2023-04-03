@@ -1,5 +1,7 @@
 package Praktikum03.JarakAman;
 
+import java.util.ArrayList;
+
 public class JarakAman {
 
     public static void main(String[] args) {
@@ -32,7 +34,6 @@ class Car{
     public int getKecepatan() {
         return kecepatan;
     }
-
     public void setKecepatan(int kecepatan) {
         this.kecepatan = kecepatan;
     }
