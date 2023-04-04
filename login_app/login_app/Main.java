@@ -100,25 +100,29 @@ public class Main {
 
         String username,password;
         while (true) {
-                System.out.println("Username");
-                System.out.print("> ");
-                username = sc.nextLine();
-                System.out.println("Password");
-                System.out.print("> ");
-                password = sc.nextLine();
-            if (!password.isBlank() && !username.isBlank()){
-                    for (User user : listUser) {
-                        if (password.length() >= 8 && !user.getUsername().equals(username)) {
-                            System.out.println("MMM");
-                            break;
-                        }
-
+            System.out.println("Username");
+            System.out.print("> ");
+            username = sc.nextLine();
+            System.out.println("Password");
+            System.out.print("> ");
+            password = sc.nextLine();
+            boolean isUsernameExist = false;
+            if (!password.isBlank() && !username.isBlank() && password.length() >= 8){
+                if (listUser.isEmpty()) {
+                    break;
+                }
+                for (User user : listUser) {
+                    if (user.getUsername().equals(username)) {
+                        isUsernameExist = true;
+                        break;
                     }
-                System.out.printf("Password Harus Lebih Dari 8 Karakter!%n");
-                } else {
-                System.out.printf("Username atau password tidak boleh kosong%n");
+                }
+            } else {
+                System.out.printf("Username atau password tidak boleh kosong dan password tidak boleh kurang dari 8 karakter%n");
             }
-
+            if (!isUsernameExist) {
+                break;
+            }
         }
 
         User user = new User(username,password);
@@ -127,16 +131,30 @@ public class Main {
         Profile profile = new Profile();
 
         // Menginput Data Profile
-        System.out.println("Nama Lengkap");
-        System.out.print("> ");
-        String fullName = sc.nextLine();
-        System.out.println("Umur");
-        System.out.print("> ");
-        int age = sc.nextInt();
-        sc.nextLine();
-        System.out.println("Hobby");
-        System.out.print("> ");
-        String hobby = sc.nextLine();
+        int age = 0;
+        String fullName,hobby;
+        boolean x = false;
+        while (true){
+            System.out.println("Nama Lengkap");
+            System.out.print("> ");
+            fullName = sc.nextLine();
+            try {
+                System.out.println("Umur");
+                System.out.print("> ");
+                age = sc.nextInt();
+                x = true;
+            } catch (Exception e){
+                System.out.println("Umur harus berupa angka!");
+            }
+            sc.nextLine();
+            System.out.println("Hobby");
+            System.out.print("> ");
+            hobby = sc.nextLine();
+            if (!hobby.isBlank() && !fullName.isBlank() && x) {
+                break;
+            }
+            System.out.println("Nama, Hobby, atau, umur tidak boleh kosong!");
+        }
 
         /*
          * TODO
