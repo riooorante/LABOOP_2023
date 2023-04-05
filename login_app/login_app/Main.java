@@ -117,11 +117,10 @@ public class Main {
                         break;
                     }
                 }
+                if (!isUsernameExist) {break;}
+                System.out.println("Username telah digunakan!");
             } else {
                 System.out.printf("Username atau password tidak boleh kosong dan password tidak boleh kurang dari 8 karakter%n");
-            }
-            if (!isUsernameExist) {
-                break;
             }
         }
 
