@@ -1,53 +1,83 @@
 package Nomor1;
 
 public class BangunDatar {
-    private int lebar;
-    private int panjang;
+    private double panjang;
+    private double lebar;
+    final double pi = Math.PI;
 
-    public int getLebar() {
-        return lebar;
+    public BangunDatar() {
     }
 
-    public void setLebar(int lebar) {
-        this.lebar = lebar;
-    }
-
-    public int getPanjang() {
+    public double getPanjang() {
         return panjang;
     }
 
-    public void setPanjang(int panjang) {
+    public void setPanjang(double panjang) {
         this.panjang = panjang;
     }
 
-    public BangunDatar(int lebar, int panjang) {
+    public double getLebar() {
+        return lebar;
+    }
+
+    public void setLebar(double lebar) {
         this.lebar = lebar;
-        this.panjang = panjang;
+    }
+
+    public double luas(){
+        return 0;
+    }
+    public double keliling(){
+        return 0;
     }
 }
 
 class Persegi extends BangunDatar{
-    public Persegi(int lebar, int panjang) {
-        super(lebar, panjang);
+
+    public Persegi(double lebar) {
+        this.setLebar(lebar);
+    }
+
+    public double  luas(){
+        return Math.pow(this.getLebar(),2);
+    }
+    public double keliling(){
+        return this.getLebar() * 4;
     }
 }
 class PersegiPanjang extends  BangunDatar{
-    public PersegiPanjang(int lebar, int panjang) {
-        super(lebar, panjang);
+    public PersegiPanjang(double lebar, double panjang) {
+        this.setLebar(lebar);
+        this.setLebar(panjang);
+    }
+    public double luas(){
+        return this.getLebar()*this.getPanjang();
+    }
+    public String  keliling(int sisi, int panjang){
+        return "Keliling : "+(2*(this.getPanjang()+this.getLebar()));
     }
 }
 class Lingkaran extends BangunDatar{
-    public Lingkaran(int lebar, int panjang) {
-        super(lebar, panjang);
+    public String  luas(int sisi){
+        return "Luas : "+Math.pow(sisi,2);
+    }
+    public String  keliling(int sisi){
+        return "Keliling : "+sisi * 4;
     }
 }
 class Segitiga extends BangunDatar{
-    public Segitiga(int lebar, int panjang) {
-        super(lebar, panjang);
+    String  luas(int radius){
+        return "Luas : "+(pi*Math.pow(radius,2));
+    }
+    String  keliling(int sisi){
+        return "Keliling : "+sisi * 4;
     }
 }
 class Trapesium extends BangunDatar{
-    public Trapesium(int lebar, int panjang) {
-        super(lebar, panjang);
+    public String  luas(int sisi){
+        return "Luas : "+Math.pow(sisi,2);
+    }
+    public String  keliling(int sisi){
+        return "Keliling : "+sisi * 4;
     }
 }
