@@ -6,6 +6,10 @@ public class BangunDatar {
     private double panjang;
     private double lebar;
     private double tinggi;
+    private double sisimiring;
+    private double sisibawah;
+    private double sisiatas;
+    final double pi = Math.PI;
 
     public double getTinggi() {
         return tinggi;
@@ -38,11 +42,6 @@ public class BangunDatar {
     public void setSisiatas(double sisiatas) {
         this.sisiatas = sisiatas;
     }
-
-    private double sisimiring;
-    private double sisibawah;
-    private double sisiatas;
-    final double pi = Math.PI;
 
     public double getPanjang() {
         return panjang;
@@ -106,19 +105,19 @@ class Lingkaran extends BangunDatar{
     }
 }
 class Segitiga extends BangunDatar{
-    public Segitiga(double lebar, double panjang) {
+    public Segitiga(double lebar, double tinggi) {
         this.setLebar(lebar);
-        this.setPanjang(panjang);
+        this.setTinggi(tinggi);
     }
 
     public double luas(){
-        return 0.5*this.getLebar()*this.getPanjang();
+        return 0.5*this.getLebar()*this.getTinggi();
     }
      public double keliling(int sisi){
         return this.getLebar() * 4;
     }
 }
-class Trapesium<> extends BangunDatar{
+class Trapesium extends BangunDatar{
 
     public Trapesium(double tinggi, double sisimiring,double sisiatas, double sisibawah) {
         this.setTinggi(tinggi);
@@ -130,6 +129,6 @@ class Trapesium<> extends BangunDatar{
         return this.getLebar()*(this.getSisiatas()+this.getSisibawah())*0.5;
     }
     public double keliling(){
-        return sisibawah+sisiatas+sisimiring+this.getLebar();
+        return this.getSisibawah()+this.getSisiatas()+(2*this.getSisimiring());
     }
 }
