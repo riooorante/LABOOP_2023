@@ -1,12 +1,48 @@
 package Nomor1;
 
+import java.util.SplittableRandom;
+
 public class BangunDatar {
     private double panjang;
     private double lebar;
-    final double pi = Math.PI;
+    private double tinggi;
 
-    public BangunDatar() {
+    public double getTinggi() {
+        return tinggi;
     }
+
+    public void setTinggi(double tinggi) {
+        this.tinggi = tinggi;
+    }
+
+    public double getSisimiring() {
+        return sisimiring;
+    }
+
+    public void setSisimiring(double sisimiring) {
+        this.sisimiring = sisimiring;
+    }
+
+    public double getSisibawah() {
+        return sisibawah;
+    }
+
+    public void setSisibawah(double sisibawah) {
+        this.sisibawah = sisibawah;
+    }
+
+    public double getSisiatas() {
+        return sisiatas;
+    }
+
+    public void setSisiatas(double sisiatas) {
+        this.sisiatas = sisiatas;
+    }
+
+    private double sisimiring;
+    private double sisibawah;
+    private double sisiatas;
+    final double pi = Math.PI;
 
     public double getPanjang() {
         return panjang;
@@ -48,7 +84,7 @@ class Persegi extends BangunDatar{
 class PersegiPanjang extends  BangunDatar{
     public PersegiPanjang(double lebar, double panjang) {
         this.setLebar(lebar);
-        this.setLebar(panjang);
+        this.setPanjang(panjang);
     }
     public double luas(){
         return this.getLebar()*this.getPanjang();
@@ -58,26 +94,42 @@ class PersegiPanjang extends  BangunDatar{
     }
 }
 class Lingkaran extends BangunDatar{
-    public String  luas(int sisi){
-        return "Luas : "+Math.pow(sisi,2);
+    public Lingkaran(double lebar) {
+        this.setLebar(lebar);
     }
-    public String  keliling(int sisi){
-        return "Keliling : "+sisi * 4;
+
+    public double luas(){
+        return Math.pow(this.getLebar(),2);
+    }
+    public double keliling(){
+        return 2*pi*this.getLebar();
     }
 }
 class Segitiga extends BangunDatar{
-    String  luas(int radius){
-        return "Luas : "+(pi*Math.pow(radius,2));
+    public Segitiga(double lebar, double panjang) {
+        this.setLebar(lebar);
+        this.setPanjang(panjang);
     }
-    String  keliling(int sisi){
-        return "Keliling : "+sisi * 4;
+
+    public double luas(){
+        return 0.5*this.getLebar()*this.getPanjang();
+    }
+     public double keliling(int sisi){
+        return this.getLebar() * 4;
     }
 }
-class Trapesium extends BangunDatar{
-    public String  luas(int sisi){
-        return "Luas : "+Math.pow(sisi,2);
+class Trapesium<> extends BangunDatar{
+
+    public Trapesium(double tinggi, double sisimiring,double sisiatas, double sisibawah) {
+        this.setTinggi(tinggi);
+        this.setSisimiring(sisimiring);
+        this.setSisiatas(sisiatas);
+        this.setSisibawah(sisibawah);
     }
-    public String  keliling(int sisi){
-        return "Keliling : "+sisi * 4;
+    public double luas(){
+        return this.getLebar()*(this.getSisiatas()+this.getSisibawah())*0.5;
+    }
+    public double keliling(){
+        return sisibawah+sisiatas+sisimiring+this.getLebar();
     }
 }
