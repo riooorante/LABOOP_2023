@@ -44,15 +44,21 @@ class PengurusInti extends Anggota {
         super.showInfo();
     }
 }
-class KoorStaf extends Anggota {
-    public KoorStaf(String nama, String jabatan) {
-        super(nama);
-        this.setJabatan(jabatan);
+class KoorStaf extends PengurusInti {
+    private String bidang;
+    public KoorStaf(String nama, String jabatan, String bidang) {
+        super(nama, jabatan);
+        this.bidang = bidang;
+    }
+
+    public String getBidang() {
+        return bidang;
     }
 
     @Override
     public void showInfo() {
         super.showInfo();
+        System.out.println("Bidang    : "+this.getBidang());
     }
 }
 
