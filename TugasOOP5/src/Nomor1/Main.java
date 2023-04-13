@@ -14,34 +14,35 @@ public class Main {
             if (pilihan.strip().equalsIgnoreCase("bangun ruang")) {
                 System.out.print("Pilih Bangun > ");
                 int input = scanner.nextInt();
+                System.out.println("=".repeat(30));
                 switch (input) {
                     case 1:
-                        System.out.print("Ukuran sisi > ");
+                        System.out.print("Sisi > ");
                         int sisi = scanner.nextInt();
                         Kubus kubus = new Kubus(sisi);
                         kubus.volume();
                         kubus.luasPermukaan();
                         break;
                     case 2:
-                        System.out.print("Ukuran sisi > ");
+                        System.out.print("Sisi > ");
                         int sisiB = scanner.nextInt();
-                        System.out.print("Ukuran lebar > ");
+                        System.out.print("Tinggi > ");
                         int tinggiB = scanner.nextInt();
-                        PersegiPanjang persegiPanjang = new PersegiPanjang(sisiB,tinggiB);
-                        persegiPanjang.luas();
-                        persegiPanjang.keliling();
+                        Balok balok = new Balok(sisiB, tinggiB);
+                        balok.volume();
+                        balok.luasPermukaan();
                         break;
                     case 3:
-                        System.out.print("Ukuran radius > ");
+                        System.out.print("Radius > ");
                         int radiusB = scanner.nextInt();
-                        Lingkaran lingkaran = new Lingkaran(radiusB);
-                        lingkaran.luas();
-                        lingkaran.keliling();
+                        Bola bola = new Bola(radiusB);
+                        bola.volume();
+                        bola.luasPermukaan();
                         break;
                     case 4:
-                        System.out.print("Ukuran radius > ");
+                        System.out.print("Radius > ");
                         int radiusT = scanner.nextInt();
-                        System.out.print("Ukuran tinggi");
+                        System.out.print("Tinggi > ");
                         int tinggiT = scanner.nextInt();
                         Tabung tabung = new Tabung(radiusT, tinggiT);
                         tabung.volume();
@@ -51,43 +52,44 @@ public class Main {
             } else {
                 System.out.print("Pilih Bangun > ");
                 int input = scanner.nextInt();
+                System.out.println("=".repeat(30));
                 switch (input) {
                     case 1:
-                        System.out.print("Ukuran sisi > ");
+                        System.out.print("Sisi > ");
                         int sisi = scanner.nextInt();
                         Persegi persegi = new Persegi(sisi);
                         persegi.luas();
                         persegi.keliling();
                         break;
                     case 2:
-                        System.out.print("Ukuran sisi > ");
+                        System.out.print("Sisi > ");
                         int sisiB = scanner.nextInt();
-                        System.out.print("Ukuran lebar > ");
+                        System.out.print("Lebar > ");
                         int tinggiB = scanner.nextInt();
-                        Balok balok = new Balok(sisiB, tinggiB);
-                        balok.volume();
-                        balok.luasPermukaan();
+                        PersegiPanjang persegiPanjang = new PersegiPanjang(sisiB,tinggiB);
+                        persegiPanjang.luas();
+                        persegiPanjang.keliling();
                         break;
                     case 3:
-                        System.out.print("Ukuran radius > ");
+                        System.out.print("Radius > ");
                         int radiusB = scanner.nextInt();
-                        Bola bola = new Bola(radiusB);
-                        bola.volume();
-                        bola.luasPermukaan();
+                        Lingkaran lingkaran = new Lingkaran(radiusB);
+                        lingkaran.luas();
+                        lingkaran.keliling();
                         break;
                     case 4:
-                        System.out.print("Ukuran sisi > ");
+                        System.out.print("Sisi > ");
                         int sisi3 = scanner.nextInt();
                         Segitiga segitiga = new Segitiga(sisi3);
                         segitiga.luas();
                         segitiga.keliling();
                         break;
                     case 5:
-                        System.out.print("Ukuran sisi miring > ");
+                        System.out.print("Sisi miring > ");
                         int sisiMI = scanner.nextInt();
-                        System.out.print("Ukuran sisi atas > ");
+                        System.out.print("Sisi atas > ");
                         int sisiAT = scanner.nextInt();
-                        System.out.print("Ukuran sisi bawah> ");
+                        System.out.print("Sisi bawah> ");
                         int sisiBA = scanner.nextInt();
                         Trapesium trapesium = new Trapesium(sisiMI, sisiAT,sisiBA);
                         trapesium.luas();
@@ -96,8 +98,14 @@ public class Main {
 
                 }
             }
-
+            System.out.println("=".repeat(30));
+            System.out.print("Ulangi proses? (Y/n) > ");
+            String konfirmasi = scanner.next();
+            if (konfirmasi.strip().equalsIgnoreCase("N")){
+                break;
+            }
         }
+        scanner.close();
     }
 
     public static void showInfo() {
