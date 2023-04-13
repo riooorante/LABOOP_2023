@@ -1,95 +1,104 @@
 package Nomor1;
 
 public class BangunRuang {
-    private double tinggi;
-    private double lebar;
-    private double panjang;
-    private double radius;
-    final double pi = Math.PI;
-
-    public double getRadius() {
-        return radius;
+    public BangunRuang() {
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
+    public void luasPermukaan() {
     }
 
-    public double getTinggi() {
-        return tinggi;
+    public void volume() {
+    }
+}
+
+class Kubus extends BangunRuang {
+    private int sisi;
+
+    public Kubus(int sisi) {
+        this.sisi = sisi;
     }
 
-    public void setTinggi(int tinggi) {
+    public void luasPermukaan() {
+        System.out.println(String.format("Luas Permukaan = %.2f", Math.pow(this.getSisi(), 2) * 6));
+    }
+
+    public void volume() {
+        System.out.printf("Volume = %.2f", Math.pow(this.getSisi(), 3));
+    }
+
+    public int getSisi() {
+        return sisi;
+    }
+}
+
+class Balok extends BangunRuang {
+    private int sisi;
+    private int  tinggi;
+
+    public Balok(int sisi, int tinggi) {
+        this.sisi = sisi;
         this.tinggi = tinggi;
     }
 
-    public double getLebar() {
-        return lebar;
+    public void luasPermukaan() {
+        System.out.println(String.format("Luas Permukaan = %.2f", Math.pow(this.getSisi(), 2) * 2 + this.getSisi() * this.getSisi() * 4));
     }
 
-    public void setLebar(int lebar) {
-        this.lebar = lebar;
+    public void volume() {
+        System.out.printf("Volume = %.2f", Math.pow(this.getSisi(), 2)*this.getTinggi());
     }
 
-    public double getPanjang() {
-        return panjang;
+    public int getSisi() {
+        return sisi;
     }
 
-    public void setPanjang(int panjang) {
-        this.panjang = panjang;
-    }
-    public double luasPermukaan(){return 0;
-    }
-    public double volume(){return 0;
+    public int getTinggi() {
+        return tinggi;
     }
 }
 
-class Kubus extends BangunRuang{
-    public Kubus(int lebar, int tinggi){
-        this.setLebar(lebar);
-        this.setTinggi(tinggi);
-    }
-    public double luasPermukaan(){
-        return Math.pow(this.getLebar(), 2)*6;
-    }
-    public double volume(){
-        return Math.pow(this.getLebar(),2)*this.getTinggi();
-    }
-
-}
-class Balok extends BangunRuang{
-    public Balok(int tinggi, int lebar, int panjang) {
-        this.setLebar(lebar);
-        this.setTinggi(tinggi);
-        this.setPanjang(panjang);
-    }
-    public double luasPermukaan(){
-        return (Math.pow(this.getLebar(), 2)*2)+(this.getLebar()*this.getTinggi()*4);
-    }
-    public double volume(){
-        return Math.pow(this.getLebar(),2)*this.getTinggi();
-    }
-}
-class Bola extends BangunRuang{
+class Bola extends BangunRuang {
+    private int radius;
     public Bola(int radius) {
-        this.setRadius(radius);
+        this.radius = radius;
     }
-    public double luasPermukaan(){
-        return Math.pow(this.getLebar(), 2)*6;
+
+    public void luasPermukaan() {
+        System.out.println(String.format("Luas Permukaan = %.2f", 4/3*Math.PI*Math.pow(this.getRadius(),3)));
     }
-    public double volume(){
-        return Math.pow(this.getLebar(),2)*this.getTinggi();
+
+    public void volume() {
+        System.out.printf("Volume = %.2f", 4*Math.PI*Math.pow(this.radius,2));
     }
+
+    public int getRadius() {
+        return radius;
+    }
+
 }
-class Tabung extends BangunRuang{
-    public Tabung(int tinggi, int radius) {
-        this.setTinggi(tinggi);
-        this.setRadius(radius);
+
+class Tabung extends BangunRuang {
+    private int radius;
+    private int tinggi;
+
+    public Tabung(int radius, int tinggi) {
+        this.tinggi = tinggi;
+        this.radius = radius;
     }
-    public double luasPermukaan(){
-        return Math.pow(this.getLebar(), 2)*6;
+    @Override
+    public void luasPermukaan() {
+        System.out.println(String.format("Luas Permukaan = %.2f", (Math.pow(this.getRadius(), 2) * Math.PI * 2 + (2 * Math.PI * this.getTinggi()))));
     }
-    public double volume(){
-        return Math.pow(this.getLebar(),2)*this.getTinggi();
+
+    public void volume() {
+        System.out.printf("Volume = %.2f", Math.pow(this.getRadius(), 2) * Math.PI * this.getTinggi());
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public int getTinggi() {
+        return tinggi;
     }
 }
