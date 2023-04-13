@@ -58,23 +58,23 @@ class Balok extends BangunRuang {
 }
 
 class Bola extends BangunRuang {
-    private int sisi;
-
-    public Bola(int sisi) {
-        this.sisi = sisi;
+    private int radius;
+    public Bola(int radius) {
+        this.radius = radius;
     }
 
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f", Math.pow(this.getSisi(), 2) * 6));
+        System.out.println(String.format("Luas Permukaan = %.2f", 4/3*Math.PI*Math.pow(this.getRadius(),3)));
     }
 
     public void volume() {
-        System.out.printf("Volume = %.2f", Math.pow(this.getSisi(), 3));
+        System.out.printf("Volume = %.2f", 4*Math.PI*Math.pow(this.radius,2));
     }
 
-    public int getSisi() {
-        return sisi;
+    public int getRadius() {
+        return radius;
     }
+
 }
 
 class Tabung extends BangunRuang {
