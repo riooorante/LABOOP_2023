@@ -6,7 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1db70b66-b04c-4698-ae22-4984caae0254" name="Changes" comment="add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nomor2/Anggota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor2/Anggota.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Balok.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Balok.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Bola.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Bola.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Kubus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Kubus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Persegi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Persegi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/PersegiPanjang.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/PersegiPanjang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Segitiga.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Segitiga.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Tabung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Tabung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Trapesium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Trapesium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nomor1/BangunDatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/BangunDatar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nomor1/BangunRuang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/BangunRuang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nomor1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Nomor2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor2/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

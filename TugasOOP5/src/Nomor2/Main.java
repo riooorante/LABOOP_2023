@@ -10,5 +10,6 @@ public class Main {
         koordinator.showInfo();
         KoorStaf staf = new KoorStaf("Vale", "Staf", "Jaringan");
         staf.showInfo();
+        System.out.println(Math.sqrt(4));
     }
 }

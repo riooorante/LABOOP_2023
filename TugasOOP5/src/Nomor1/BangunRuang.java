@@ -17,13 +17,13 @@ class Kubus extends BangunRuang {
     public Kubus(int sisi) {
         this.sisi = sisi;
     }
-
+    @Override
     public void luasPermukaan() {
         System.out.println(String.format("Luas Permukaan = %.2f", Math.pow(this.getSisi(), 2) * 6));
     }
-
+    @Override
     public void volume() {
-        System.out.printf("Volume = %.2f", Math.pow(this.getSisi(), 3));
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisi(), 3));
     }
 
     public int getSisi() {
@@ -39,13 +39,13 @@ class Balok extends BangunRuang {
         this.sisi = sisi;
         this.tinggi = tinggi;
     }
-
+    @Override
     public void luasPermukaan() {
         System.out.println(String.format("Luas Permukaan = %.2f", Math.pow(this.getSisi(), 2) * 2 + this.getSisi() * this.getSisi() * 4));
     }
-
+    @Override
     public void volume() {
-        System.out.printf("Volume = %.2f", Math.pow(this.getSisi(), 2)*this.getTinggi());
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisi(), 2)*this.getTinggi());
     }
 
     public int getSisi() {
@@ -62,13 +62,13 @@ class Bola extends BangunRuang {
     public Bola(int radius) {
         this.radius = radius;
     }
-
+    @Override
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f", 4/3*Math.PI*Math.pow(this.getRadius(),3)));
+        System.out.println(String.format("Luas Permukaan = %.2f", (4/3)*Math.PI*Math.pow(this.getRadius(),3)));
     }
-
+    @Override
     public void volume() {
-        System.out.printf("Volume = %.2f", 4*Math.PI*Math.pow(this.radius,2));
+        System.out.printf("Volume = %.2f%n", 4*Math.PI*Math.pow(this.radius,2));
     }
 
     public int getRadius() {
@@ -89,9 +89,9 @@ class Tabung extends BangunRuang {
     public void luasPermukaan() {
         System.out.println(String.format("Luas Permukaan = %.2f", (Math.pow(this.getRadius(), 2) * Math.PI * 2 + (2 * Math.PI * this.getTinggi()))));
     }
-
+    @Override
     public void volume() {
-        System.out.printf("Volume = %.2f", Math.pow(this.getRadius(), 2) * Math.PI * this.getTinggi());
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getRadius(), 2) * Math.PI * this.getTinggi());
     }
 
     public int getRadius() {
