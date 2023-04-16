@@ -11,7 +11,11 @@ class Persegi extends BangunDatar{
         this.sisi = sisi;
     }
     public void luas(){
+<<<<<<< HEAD
         System.out.printf("Luas = %.2f%n", Math.pow(this.getSisi(),2));
+=======
+        System.out.printf("Luas = %,2f%n", Math.pow(this.getSisi(),2));
+>>>>>>> 9882069da6a8851d8bc15e800cc9ec1d79380e74
     }
     public void keliling(){
         System.out.printf("Keliling = %d%n", this.getSisi()*4);
@@ -30,12 +34,12 @@ class PersegiPanjang extends  BangunDatar{
     }
     @Override
     public void luas(){
-        System.out.printf("Luas = %d%n", this,getSisi()*this.getLebar());
+        System.out.printf("Luas = %d%n", this.getSisi()*this.getLebar());
     }
 
     @Override
     public void keliling() {
-        System.out.printf("Keliling = %d%n", this,getSisi()*2+2*this.getLebar());
+        System.out.printf("Keliling = %d%n", this.getSisi()*2+2*this.getLebar());
     }
 
     public int getSisi() {
@@ -82,7 +86,7 @@ class Segitiga extends BangunDatar{
     @Override
     public void luas(){
         double tinggi = Math.sqrt(Math.pow(this.getSisi(),2)-Math.pow(0.5*this.getSisi(),2));
-        System.out.printf("Luas = %.2f%n", 0.5*this.sisi*tinggi);
+        System.out.printf("Luas = %.2f%n", 0.5*this.getSisi()*tinggi);
     }
 
     @Override
@@ -120,6 +124,6 @@ class Trapesium extends BangunDatar{
     }
     @Override
     public void keliling() {
-        System.out.printf("Keliling = %df%n", this.getSisiatas()+this.getSisibawah()+(this.getSisimiring()*2));
+        System.out.printf("Keliling = %d%n", this.getSisiatas()+this.getSisibawah()+(this.getSisimiring()*2));
     }
 }
