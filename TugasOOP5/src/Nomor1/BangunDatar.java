@@ -11,7 +11,7 @@ class Persegi extends BangunDatar{
         this.sisi = sisi;
     }
     public void luas(){
-        System.out.printf("Luas = %d%n", Math.pow(this.getSisi(),2));
+        System.out.printf("Luas = %.2f%n", Math.pow(this.getSisi(),2));
     }
     public void keliling(){
         System.out.printf("Keliling = %d%n", this.getSisi()*4);
