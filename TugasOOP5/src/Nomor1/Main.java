@@ -8,10 +8,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             showInfo();
-            System.out.println("Bangun Ruang/Bangun Datar > ");
-            String pilihan = scanner.nextLine();
-            if (pilihan.strip().equalsIgnoreCase("bangun ruang")) {
-                scanner.nextLine();
+            System.out.print("Bangun Ruang/Bangun Datar (A/B) > ");
+            String pilihan = scanner.next();
+            if (pilihan.strip().equalsIgnoreCase("a")) {
                 System.out.print("Pilih Bangun > ");
                 int input = scanner.nextInt();
                 switch (input) {
@@ -32,11 +31,11 @@ public class Main {
                         balok.luasPermukaan();
                         break;
                     case 3:
-                        System.out.print("Sisi > ");
-                        int sisi3 = scanner.nextInt();
-                        Segitiga segitiga = new Segitiga(sisi3);
-                        segitiga.luas();
-                        segitiga.keliling();
+                        System.out.print("Radius > ");
+                        int radiusB = scanner.nextInt();
+                        Bola bola = new Bola(radiusB);
+                        bola.volume();
+                        bola.luasPermukaan();
                         break;
                     case 4:
                         System.out.print("Radius > ");
@@ -47,7 +46,12 @@ public class Main {
                         tabung.volume();
                         tabung.luasPermukaan();
                         break;
+
                 }
+                quit();
+                String konfirmasi = scanner.next();
+                if (konfirmasi.strip().trim().equalsIgnoreCase("n")){System.exit(0);}
+
             } else {
                 System.out.print("Pilih Bangun > ");
                 int input = scanner.nextInt();
@@ -70,17 +74,17 @@ public class Main {
                         break;
                     case 3:
                         System.out.print("Radius > ");
-                        int radiusB = scanner.nextInt();
-                        Bola bola = new Bola(radiusB);
-                        bola.volume();
-                        bola.luasPermukaan();
-                        break;
-                    case 4:
-                        System.out.print("Radius > ");
                         int radiusL = scanner.nextInt();
                         Lingkaran lingkaran = new Lingkaran(radiusL);
                         lingkaran.luas();
                         lingkaran.keliling();
+                        break;
+                    case 4:
+                        System.out.print("Sisi > ");
+                        int sisi3 = scanner.nextInt();
+                        Segitiga segitiga = new Segitiga(sisi3);
+                        segitiga.luas();
+                        segitiga.keliling();
                         break;
                     case 5:
                         System.out.print("Sisi miring > ");
@@ -95,6 +99,9 @@ public class Main {
                         break;
 
                 }
+                quit();
+                String konfirmasi = scanner.next();
+                if (konfirmasi.strip().trim().equalsIgnoreCase("n")){System.exit(0);}
             }
 
         }
@@ -112,5 +119,9 @@ public class Main {
         System.out.println("3. LINGKARAN");
         System.out.println("4. SEGITIGA");
         System.out.println("5. TRAPESIUM");
+    }
+
+    public static void quit(){
+        System.out.println("Apakah Ingin Melanjutkan Program? (Y/n)");
     }
 }
