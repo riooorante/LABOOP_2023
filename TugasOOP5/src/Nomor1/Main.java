@@ -1,7 +1,6 @@
 package Nomor1;
 
 import java.util.Scanner;
-import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,8 +24,6 @@ public class Main {
                     case 2:
                         System.out.print("Sisi > ");
                         int sisiB = scanner.nextInt();
-<<<<<<< HEAD
-=======
                         System.out.print("Tinggi > ");
                         int tinggiB = scanner.nextInt();
                         Balok balok = new Balok(sisiB, tinggiB);
@@ -50,52 +47,10 @@ public class Main {
                         tabung.luasPermukaan();
                         break;
                 }
-            } else {
-                System.out.print("Pilih Bangun > ");
-                int input = scanner.nextInt();
-                System.out.println("=".repeat(30));
-                switch (input) {
-                    case 1:
-                        System.out.print("Sisi > ");
-                        int sisi = scanner.nextInt();
-                        Persegi persegi = new Persegi(sisi);
-                        persegi.luas();
-                        persegi.keliling();
-                        break;
-                    case 2:
-                        System.out.print("Sisi > ");
-                        int sisiB = scanner.nextInt();
->>>>>>> 9882069da6a8851d8bc15e800cc9ec1d79380e74
-                        System.out.print("Lebar > ");
-                        int tinggiB = scanner.nextInt();
-                        PersegiPanjang persegiPanjang = new PersegiPanjang(sisiB,tinggiB);
-                        persegiPanjang.luas();
-                        persegiPanjang.keliling();
-                        break;
-                    case 3:
-                        System.out.print("Radius > ");
-                        int radiusB = scanner.nextInt();
-                        Lingkaran lingkaran = new Lingkaran(radiusB);
-                        lingkaran.luas();
-                        lingkaran.keliling();
-                        break;
-                    case 4:
-<<<<<<< HEAD
-                        System.out.print("Radius > ");
-                        int radiusT = scanner.nextInt();
-                        System.out.print("Tinggi");
-                        int tinggiT = scanner.nextInt();
-                        Tabung tabung = new Tabung(radiusT, tinggiT);
-                        tabung.volume();
-                        tabung.luasPermukaan();
-                        break;
-
-                }
                 quit();
                 String konfirmasi = scanner.next();
                 if (konfirmasi.strip().trim().equalsIgnoreCase("n")){System.exit(0);}
-
-            } else {
+            }  else {
                 System.out.print("Pilih Bangun > ");
                 int input = scanner.nextInt();
                 switch (input) {
@@ -123,8 +78,6 @@ public class Main {
                         lingkaran.keliling();
                         break;
                     case 4:
-=======
->>>>>>> 9882069da6a8851d8bc15e800cc9ec1d79380e74
                         System.out.print("Sisi > ");
                         int sisi3 = scanner.nextInt();
                         Segitiga segitiga = new Segitiga(sisi3);
@@ -148,14 +101,7 @@ public class Main {
                 String konfirmasi = scanner.next();
                 if (konfirmasi.strip().trim().equalsIgnoreCase("n")){System.exit(0);}
             }
-            System.out.println("=".repeat(30));
-            System.out.print("Ulangi proses? (Y/n) > ");
-            String konfirmasi = scanner.next();
-            if (konfirmasi.strip().equalsIgnoreCase("N")){
-                break;
-            }
         }
-        scanner.close();
     }
 
     public static void showInfo() {

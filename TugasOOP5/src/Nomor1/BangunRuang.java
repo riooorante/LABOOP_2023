@@ -64,11 +64,8 @@ class Bola extends BangunRuang {
     }
     @Override
     public void luasPermukaan() {
-<<<<<<< HEAD
         System.out.println(String.format("Luas Permukaan = %.2f%n", 4/3*Math.PI*Math.pow(this.getRadius(),3)));
-=======
         System.out.println(String.format("Luas Permukaan = %.2f", (4/3)*Math.PI*Math.pow(this.getRadius(),3)));
->>>>>>> 9882069da6a8851d8bc15e800cc9ec1d79380e74
     }
     @Override
     public void volume() {

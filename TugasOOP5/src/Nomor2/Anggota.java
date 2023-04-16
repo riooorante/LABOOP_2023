@@ -22,7 +22,7 @@ public class Anggota {
     public void showInfo(){
         System.out.println("Nama      : "+this.getNama());
         System.out.println("Komunitas : "+Univ);
-        System.out.println("Jabatan   : "+this.getJabatan());
+        System.out.printf("Jabatan   : %s%n",this.getJabatan());
     }
 
     public void setNama(String nama) {
@@ -58,7 +58,7 @@ class KoorStaf extends PengurusInti {
     @Override
     public void showInfo() {
         super.showInfo();
-        System.out.println("Bidang    : "+this.getBidang());
+        System.out.printf("Bidang    : %s%n",this.getBidang());
     }
 }
 

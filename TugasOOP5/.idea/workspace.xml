@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1db70b66-b04c-4698-ae22-4984caae0254" name="Changes" comment="add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Persegi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TugasOOP5/Nomor1/Persegi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nomor1/BangunDatar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/BangunDatar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Nomor1/BangunRuang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/BangunRuang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Nomor1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor1/Main.java" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/src/Nomor2/Anggota.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor2/Anggota.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Nomor2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nomor2/Main.java" afterDir="false" />
->>>>>>> 9882069da6a8851d8bc15e800cc9ec1d79380e74
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
