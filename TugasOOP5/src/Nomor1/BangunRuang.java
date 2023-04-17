@@ -1,7 +1,17 @@
 package Nomor1;
 
 public class BangunRuang {
-    public BangunRuang() {
+
+    private int sisiA;
+    private int  sisiB;
+
+    public BangunRuang(int sisiA) {
+        this.sisiA = sisiA;
+    }
+
+    public BangunRuang(int sisiA, int sisiB) {
+        this.sisiA = sisiA;
+        this.sisiB = sisiB;
     }
 
     public void luasPermukaan() {
@@ -9,97 +19,79 @@ public class BangunRuang {
 
     public void volume() {
     }
+
+    public int getSisiA() {
+        return sisiA;
+    }
+
+    public int getSisiB() {
+        return sisiB;
+    }
+
 }
 
 class Kubus extends BangunRuang {
-    private int sisi;
 
-    public Kubus(int sisi) {
-        this.sisi = sisi;
+    public Kubus(int sisiA) {
+        super(sisiA);
     }
     @Override
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f%n", Math.pow(this.getSisi(), 2) * 6));
+        System.out.println(String.format("Luas Permukaan = %.2f%n", Math.pow(this.getSisiA(), 2) * 6));
     }
     @Override
     public void volume() {
-        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisi(), 3));
-    }
-
-    public int getSisi() {
-        return sisi;
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisiA(), 3));
     }
 }
 
 class Balok extends BangunRuang {
-    private int sisi;
-    private int  tinggi;
 
-    public Balok(int sisi, int tinggi) {
-        this.sisi = sisi;
-        this.tinggi = tinggi;
+    public Balok(int sisiA, int sisiB) {
+        super(sisiA, sisiB);
     }
     @Override
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f%n", Math.pow(this.getSisi(), 2) * 2 + this.getSisi() * this.getSisi() * 4));
+        System.out.println(String.format("Luas Permukaan = %.2f%n", Math.pow(this.getSisiA(), 2) * 2 + this.getSisiA() * this.getSisiA() * 4));
     }
     @Override
     public void volume() {
-        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisi(), 2)*this.getTinggi());
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisiA(), 2)*this.getSisiB());
     }
 
-    public int getSisi() {
-        return sisi;
-    }
 
-    public int getTinggi() {
-        return tinggi;
-    }
 }
 
 class Bola extends BangunRuang {
-    private int radius;
     public Bola(int radius) {
-        this.radius = radius;
+        super(radius);
     }
     @Override
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f%n", 4/3*Math.PI*Math.pow(this.getRadius(),3)));
-        System.out.println(String.format("Luas Permukaan = %.2f", (4/3)*Math.PI*Math.pow(this.getRadius(),3)));
+        System.out.println(String.format("Luas Permukaan = %.2f%n", 4/3*Math.PI*Math.pow(this.getSisiA(),3)));
+        System.out.println(String.format("Luas Permukaan = %.2f", (4/3)*Math.PI*Math.pow(this.getSisiA(),3)));
     }
     @Override
     public void volume() {
-        System.out.printf("Volume = %.2f%n", 4*Math.PI*Math.pow(this.radius,2));
+        System.out.printf("Volume = %.2f%n", 4*Math.PI*Math.pow(this.getSisiA(),2));
     }
 
-    public int getRadius() {
-        return radius;
-    }
 
 }
 
 class Tabung extends BangunRuang {
-    private int radius;
-    private int tinggi;
+
 
     public Tabung(int radius, int tinggi) {
-        this.tinggi = tinggi;
-        this.radius = radius;
+        super(radius,tinggi);
     }
     @Override
     public void luasPermukaan() {
-        System.out.println(String.format("Luas Permukaan = %.2f%n", (Math.pow(this.getRadius(), 2) * Math.PI * 2 + (2 * Math.PI * this.getTinggi()))));
+        System.out.println(String.format("Luas Permukaan = %.2f%n", (Math.pow(this.getSisiA(), 2) * Math.PI * 2 + (2 * Math.PI * this.getSisiB()))));
     }
     @Override
     public void volume() {
-        System.out.printf("Volume = %.2f%n", Math.pow(this.getRadius(), 2) * Math.PI * this.getTinggi());
+        System.out.printf("Volume = %.2f%n", Math.pow(this.getSisiA(), 2) * Math.PI * this.getSisiB());
     }
 
-    public int getRadius() {
-        return radius;
-    }
-
-    public int getTinggi() {
-        return tinggi;
-    }
 }
