@@ -1,5 +1,7 @@
 package TugasOOP6;
 
+package java.util.ArrayList
+java.util.Stack
 public class Main {
     public static void main(String[] args) {
         // Class TugasOOP6.Dog
@@ -20,7 +22,5 @@ public class Main {
         // Class Car
         Car kijang = new Car("Hitam", 6);
         kijang.move();
-
-
     }
 }
