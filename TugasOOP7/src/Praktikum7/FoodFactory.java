@@ -4,19 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodFactory {
-    public static Food getFood(String food){
-        if (food.equalsIgnoreCase("burger")){
+    public static Food getFood1(FoodType foodType){
+        if (foodType == FoodType.BURGER){
             Burger burger = new Burger();
             return burger;
-        } else if (food.equalsIgnoreCase("pizza")) {
+        } else if (foodType == FoodType.PIZZA) {
             Pizza pizza = new Pizza();
             return pizza;
-        } else {
+        } else if (foodType == FoodType.STEAK){
             Steak steak = new Steak();
             return steak;
+        } else {return null;}
+    }
+    public static Food getFood(FoodType foodType){
+        switch (foodType){
+            case PIZZA -> {
+                return new Pizza();
+            }
+            case BURGER -> {
+                return new Burger();}
+            case STEAK -> {
+                return new Steak();}
+            default -> throw new IllegalArgumentException("Salah Input!"+foodType);
         }
     }
+
 }
+enum FoodType {
+    BURGER, PIZZA, STEAK
+        }
 class Burger implements Food{
     protected final int price = 15000;
     @Override
@@ -50,9 +66,9 @@ class Restaurant{
 
 class MainRestaurant{
     public static void main(String[] args) {
-        Food burger = FoodFactory.getFood("burger");
-        Food pizza = FoodFactory.getFood("pizza");
-        Food steak = FoodFactory.getFood("steak");
+        Food burger = FoodFactory.getFood(FoodType.BURGER);
+        Food pizza = FoodFactory.getFood(FoodType.PIZZA);
+        Food steak = FoodFactory.getFood(FoodType.STEAK);
 
         List<Food> foods = new ArrayList<>();
         foods.add(burger);

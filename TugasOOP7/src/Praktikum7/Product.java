@@ -2,7 +2,7 @@ package Praktikum7;
 
 import java.util.ArrayList;
 
-public class Product<T>{
+public class Product<T,R>{
     protected String name;
     protected T price;
     protected String expireDate;
