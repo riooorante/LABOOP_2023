@@ -21,21 +21,27 @@ class BackgroundThread implements Runnable{
     private int waktuEksekusi;
     private int berhasil;
     private int gagal;
+    private int jumlahData;
+
+    public BackgroundThread(int jumlahData) {
+        this.jumlahData = jumlahData;
+    }
+
     @Override
     public void run() {
-        for (int i = 0;i < 4;i++){
+        for (int i = 0;i < jumlahData;i++){
             waktuEksekusi = TaskTimeHelper.getWaktuEksekusi();
             if (0 <= waktuEksekusi && waktuEksekusi <= 4){
-                System.out.printf("Loading... (%ss)%n",waktuEksekusi);
+                try {
+                    TimeUnit.SECONDS.sleep(waktuEksekusi);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.printf("Loading... (%ss)%n", waktuEksekusi);
                 this.berhasil++;
             } else {
                 System.out.println("Request Time Out!");
                this.gagal++;
-            }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e){
-                e.printStackTrace();
             }
         };
     }
@@ -50,12 +56,14 @@ class BackgroundThread implements Runnable{
 
 class UIThread{
     public static void main(String[] args) throws InterruptedException{
+        Random random = new Random();
+        int jumlahData = random.nextInt(9)+1;
+
         long start = System.currentTimeMillis();
 
-        System.out.println("Start load 4 Data.");
-        System.out.println();
+        System.out.printf("Start load %s data%n%n", jumlahData);
 
-        BackgroundThread backgroundThread = new BackgroundThread();
+        BackgroundThread backgroundThread = new BackgroundThread(jumlahData);
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         executorService.submit(backgroundThread);
         executorService.shutdown();
@@ -65,8 +73,12 @@ class UIThread{
 
         System.out.println();
         System.out.println("Task Finish");
-        System.out.printf("Time Execution %dms%n", (int) (end-start));
-        System.out.printf("Data Succesfully Loaded %d & Data Failed to load %d", backgroundThread.getBerhasil(), backgroundThread.getGagal());
+        System.out.printf("Time Execution %ds%n", (int) ((end - start) / 1000));
 
+        if (backgroundThread.getBerhasil() == jumlahData) {
+            System.out.println("All data is succesfully loaded!");
+        } else {
+            System.out.printf("Data Succesfully Loaded %d & Data Failed to load %d", backgroundThread.getBerhasil(), backgroundThread.getGagal());
+        }
     }
 }
