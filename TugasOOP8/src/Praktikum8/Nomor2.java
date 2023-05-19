@@ -72,9 +72,6 @@ class Typer extends Thread {
         this.setDurasi(waktu);
 
         typeRacer.addResult(this);
-
-
-
     }
 }
 
@@ -135,12 +132,14 @@ class TypeRacer {
         System.out.println("\nKlasmen Akhir Type Racer");
         System.out.println("=========================\n");
         for (int i = 0; i < raceStanding.size(); i++){
-            System.out.printf("%d. %s = %d detik%n", raceStanding.indexOf(raceStanding.get(i))+1, raceStanding.get(i).getName(), raceStanding.get(i).getFinishTime());
+            System.out.printf("%d. %s = %d ms%n", raceStanding.indexOf(raceStanding.get(i))+1, raceStanding.get(i).getName(), raceStanding.get(i).getFinishTime());
         }
     }
 
     public void startRace() throws InterruptedException{
         this.setNewWordsToType();
+        System.out.println();
+        
         for (Typer typer : raceContestant){
             typer.start();
         }
@@ -171,11 +170,108 @@ public class Nomor2 {
         System.out.println("|| Text to Type");
         System.out.println("\"" + typeRacer.getWordsToType() + "\"");
 
-        Typer[] typers = new Typer[3];
+        Typer[] typers = new Typer[100];
 
         typers[0] = new Typer("Bot Mansur", 80.0, typeRacer);
-        typers[1] = new Typer("Bot Toku", 72.0, typeRacer);
-        typers[2] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[1] = new Typer("Bot Toku", 71.0, typeRacer);
+        typers[2] = new Typer("Bot Yukiao", 65.0, typeRacer);
+        typers[3] = new Typer("Bot Mansur", 76.0, typeRacer);
+        typers[4] = new Typer("Bot Toku", 98.0, typeRacer);
+        typers[5] = new Typer("Bot Yukiao", 121.0, typeRacer);
+        typers[6] = new Typer("Bot Mansur", 32.0, typeRacer);
+        typers[7] = new Typer("Bot Toku", 44.0, typeRacer);
+        typers[8] = new Typer("Bot Yukiao", 55.0, typeRacer);
+        typers[9] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[10] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[11] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[12] = new Typer("Bot Toku", 65.0, typeRacer);
+        typers[13] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[14] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[15] = new Typer("Bot Toku", 88.0, typeRacer);
+        typers[16] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[17] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[18] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[19] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[20] = new Typer("Bot Mansur", 40.0, typeRacer);
+        typers[21] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[22] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[23] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[24] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[25]= new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[26] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[27] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[28] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[29] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[30] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[31] = new Typer("Bot Mansur", 86.0, typeRacer);
+        typers[32] = new Typer("Bot Toku", 50.0, typeRacer);
+        typers[33] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[34] = new Typer("Bot Toku", 66.0, typeRacer);
+        typers[35] = new Typer("Bot Yukiao", 76.0, typeRacer);
+        typers[36] = new Typer("Bot Mansur", 30.0, typeRacer);
+        typers[37] = new Typer("Bot Toku", 54.0, typeRacer);
+        typers[38] = new Typer("Bot Yukiao", 90.0, typeRacer);
+        typers[39] = new Typer("Bot Mansur", 100.0, typeRacer);
+        typers[40] = new Typer("Bot Toku", 65.0, typeRacer);
+        typers[41] = new Typer("Bot Yukiao", 80.0, typeRacer);
+        typers[42] = new Typer("Bot Mansur", 900.0, typeRacer);
+        typers[43] = new Typer("Bot Toku", 45.0, typeRacer);
+        typers[44] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[45] = new Typer("Bot Toku", 71.0, typeRacer);
+        typers[46] = new Typer("Bot Yukiao", 65.0, typeRacer);
+        typers[47] = new Typer("Bot Mansur", 76.0, typeRacer);
+        typers[48] = new Typer("Bot Toku", 98.0, typeRacer);
+        typers[49] = new Typer("Bot Yukiao", 121.0, typeRacer);
+        typers[50] = new Typer("Bot Mansur", 32.0, typeRacer);
+        typers[51] = new Typer("Bot Toku", 44.0, typeRacer);
+        typers[52] = new Typer("Bot Yukiao", 55.0, typeRacer);
+        typers[53] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[54] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[55] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[56] = new Typer("Bot Toku", 65.0, typeRacer);
+        typers[57] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[58] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[59] = new Typer("Bot Toku", 88.0, typeRacer);
+        typers[60] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[61] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[62] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[63] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[64] = new Typer("Bot Mansur", 40.0, typeRacer);
+        typers[65] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[66] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[67] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[68] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[69]= new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[70] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[71] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[72] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[73] = new Typer("Bot Toku", 72.0, typeRacer);
+        typers[74] = new Typer("Bot Yukiao", 70.0, typeRacer);
+        typers[75] = new Typer("Bot Mansur", 86.0, typeRacer);
+        typers[76] = new Typer("Bot Toku", 50.0, typeRacer);
+        typers[77] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[78] = new Typer("Bot Toku", 66.0, typeRacer);
+        typers[79] = new Typer("Bot Yukiao", 76.0, typeRacer);
+        typers[80] = new Typer("Bot Mansur", 30.0, typeRacer);
+        typers[81] = new Typer("Bot Toku", 54.0, typeRacer);
+        typers[82] = new Typer("Bot Yukiao", 90.0, typeRacer);
+        typers[83] = new Typer("Bot Mansur", 100.0, typeRacer);
+        typers[84] = new Typer("Bot Toku", 65.0, typeRacer);
+        typers[85] = new Typer("Bot Yukiao", 80.0, typeRacer);
+        typers[86] = new Typer("Bot Mansur", 900.0, typeRacer);
+        typers[87] = new Typer("Bot Toku", 45.0, typeRacer);
+        typers[88] = new Typer("Bot Toku", 50.0, typeRacer);
+        typers[89] = new Typer("Bot Mansur", 80.0, typeRacer);
+        typers[90] = new Typer("Bot Toku", 66.0, typeRacer);
+        typers[91] = new Typer("Bot Yukiao", 76.0, typeRacer);
+        typers[92] = new Typer("Bot Mansur", 30.0, typeRacer);
+        typers[93] = new Typer("Bot Toku", 54.0, typeRacer);
+        typers[94] = new Typer("Bot Yukiao", 90.0, typeRacer);
+        typers[95] = new Typer("Bot Mansur", 100.0, typeRacer);
+        typers[96] = new Typer("Bot Toku", 65.0, typeRacer);
+        typers[97] = new Typer("Bot Yukiao", 80.0, typeRacer);
+        typers[98] = new Typer("Bot Mansur", 900.0, typeRacer);
+        typers[99] = new Typer("Bot Toku", 45.0, typeRacer);
 
         typeRacer.getRaceContestant().addAll(Arrays.asList(typers));
 

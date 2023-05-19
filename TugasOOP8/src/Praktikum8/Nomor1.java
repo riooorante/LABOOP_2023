@@ -19,66 +19,71 @@ class TaskTimeHelper{
 
 class BackgroundThread implements Runnable{
     private int waktuEksekusi;
-    private int berhasil;
-    private int gagal;
-    private int jumlahData;
-
-    public BackgroundThread(int jumlahData) {
-        this.jumlahData = jumlahData;
-    }
 
     @Override
     public void run() {
-        for (int i = 0;i < jumlahData;i++){
-            waktuEksekusi = TaskTimeHelper.getWaktuEksekusi();
-            if (0 <= waktuEksekusi && waktuEksekusi <= 4){
-                try {
-                    TimeUnit.SECONDS.sleep(waktuEksekusi);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.printf("Loading... (%ss)%n", waktuEksekusi);
-                this.berhasil++;
-            } else {
-                System.out.println("Request Time Out!");
-               this.gagal++;
-            }
-        };
-    }
-    public int getBerhasil() {
-        return this.berhasil;
-    }
-
-    public int getGagal() {
-        return this.gagal;
+        waktuEksekusi = TaskTimeHelper.getWaktuEksekusi();
+        System.out.println("start " +" "+System.currentTimeMillis()+" "+Thread.currentThread().getName());
+        try {
+            Thread.sleep(waktuEksekusi*1000);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        if (waktuEksekusi > 4){
+            System.out.println("Request Timeout! "+waktuEksekusi+" "+Thread.currentThread().getName());
+            Counter.Gagal();
+        } else {
+            System.err.println("Selesai "+System.currentTimeMillis()+" "+Thread.currentThread().getName());
+            Counter.Berhasil();
+        }
     }
 }
+class Counter {
+    public static int berhasil;
+    public static int gagal;
+    public static synchronized void Berhasil() {
+        berhasil++;
+    }
+    public static synchronized void Gagal() {
+        gagal++;
+    }
+}
+class Main{
 
-class UIThread{
+    public static int data = 100;
+    public static int count = 1;
     public static void main(String[] args) throws InterruptedException{
-        Random random = new Random();
-        int jumlahData = random.nextInt(9)+1;
+        System.out.printf("Start load %s data%n%n", data);
+        ExecutorService executorService = Executors.newFixedThreadPool(16);
 
         long start = System.currentTimeMillis();
 
-        System.out.printf("Start load %s data%n%n", jumlahData);
-
-        BackgroundThread backgroundThread = new BackgroundThread(jumlahData);
-        ExecutorService executorService = Executors.newFixedThreadPool(4);
-        executorService.submit(backgroundThread);
+        for (int i = 0; i < data; i++) {
+            BackgroundThread backgroundThread = new BackgroundThread();
+            executorService.execute(backgroundThread);
+        }
         executorService.shutdown();
-        executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
 
         long end = System.currentTimeMillis();
 
-        System.out.println();
-        System.out.println("Task Finish");
-        System.out.printf("Time Execution %ds%n", (int) ((end - start) / 1000));
+        while (true) {
+            System.out.printf("loading %ds%n",count);
+            count++;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            if (Counter.berhasil + Counter.gagal == data) {
+                System.out.printf("%nTotal Waktu %ds", count-1);
+                if (Counter.berhasil == data) {
+                    System.out.printf("%nAll data is succesfully loaded!");
+                } else {
+                    System.out.printf("%nData Succesfully Loaded %d & Data Failed to load %d", Counter.berhasil,Counter.gagal);
+                }
+                break;
 
-        if (backgroundThread.getBerhasil() == jumlahData) {
-            System.out.println("All data is succesfully loaded!");
-        } else {
-            System.out.printf("Data Succesfully Loaded %d & Data Failed to load %d", backgroundThread.getBerhasil(), backgroundThread.getGagal());
+            }
         }
     }
 }
